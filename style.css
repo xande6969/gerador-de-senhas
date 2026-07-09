@@ -91,9 +91,19 @@ body{
 }
 
 .parametro-senha__botao{
+    background-color: var(--fundo-texto);
+    color:var(--branco);
+    border: 2px solid var(--borda)
+    font-size: 24px;
+    cursor: pointer;
 
 }
 .parametro-senha__texto{
+    padding: 24px;
+    font-size: 24px;
+    margin: 0;
+    border-top: 2px solid var(--borda);
+    border-bottom: 2px solid var(--borda);
 
 }
 
