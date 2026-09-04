@@ -7,12 +7,22 @@ let letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 let letrasMinusculas = 'abcdefghilklmnopqrstuvwxyz'
 
-let numero "123456789"
+let numero ="123456789"
 
-let simbolos "!@#$%&*"
+let simbolos = "!@#$%&*"
 
-tamanhoSenha = 8
+let tamanhoSenha = 8
 numeroSenha.textContent = tamanhoSenha;
+
+const checkbox = document.querySelectorAll('.checkbox')
+
+for(let i = 0; < checkbox.length; i++){
+    checkbox[i].onclick = geraSenha;
+}
+
+//check box [37]= maisculas
+//check box [41]=nsimbolos
+//numeros [45]
 
 const botoes = document.querySelectorAll('.parametro-senha__botao')
 
@@ -30,11 +40,12 @@ botoes[1].onclick = aumentar;
 function aumentar(){
     tamanhoSenha++;
     numeroSenha.textContent = tamanhoSenha;
+    geraSenha()
 }
 geraSenha()
 
 function geraSenha(){
-    let sennha = ""
+    let senha = ""
 
     for(let i = 0; i < tamanhoSenha; i++){
         let numeroAleatorio = Math.random() * 26;
