@@ -21,7 +21,7 @@ numeroSenha.textContent = tamanhoSenha;
 
 const checkbox = document.querySelectorAll('.checkbox')
 
-for(let i = 0; < checkbox.length; i++){
+for(let i = 0; i < checkbox.length; i++){
     checkbox[i].onclick = geraSenha;
 }
 
@@ -37,19 +37,29 @@ const botoes = document.querySelectorAll('.parametro-senha__botao')
 botoes[0].onclick = diminuir;
 
 function diminuir(){
-    tamanhoSenha--;
+
+  if(tamanhoSenha > 0){
+     tamanhoSenha--;
     numeroSenha.textContent = tamanhoSenha;
-    geraSenha()
+     geraSenha()
+  }
+
+
+
 }
 
 botoes[1].onclick = aumentar;
 
 function aumentar(){
+    if (tamanhoSenha < 20) {
     tamanhoSenha++;
     numeroSenha.textContent = tamanhoSenha;
-    geraSenha()
+    geraSenha();
 }
-geraSenha()
+
+
+}
+
 
 function geraSenha(){
     let senha = ""
@@ -67,7 +77,13 @@ function geraSenha(){
 //função para classificar a senha
 function classificarSenha(){
 
+    forcaSenha.classList.remove('forte', 'media', 'fraca')
+
     if(tamanhoSenha > 11){
         forcaSenha.classList.add('forte')
-    }
+        }else if (tamanhoSenha < 7){
+            forcaSenha.classList.add('fraca')
+        }else{
+            forcaSenha.classList.add('media')
+        }
 }
